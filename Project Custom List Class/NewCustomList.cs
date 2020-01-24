@@ -11,22 +11,30 @@ namespace Project_Custom_List_Class
         
         public T[] items;
         public int capacity;
-        public int count;
+        int count;
+        
 
         public NewCustomList()
         {
             count = 0;
-            items = new T[4];
+            capacity = 4;
+            items = new T[capacity];
+
         }
-        public void Add(T item)
+
+        public void Add(T item) 
         {
-            items[count] = item;
             if (count == capacity)
             {
-                capacity *= 2; 
+                
+                items = new T[capacity * 2];
+                  
             }
+
+            items[count] = item;
             count++;
         }
+
         public T this[int index]
         {
             get
@@ -38,6 +46,20 @@ namespace Project_Custom_List_Class
                 items[index] = value;
             }
         }
+
+        public int Count 
+        {
+            get
+            {
+                return count;
+            }
+        }
+
+       public void Remove(T item)
+       {
+
+            
+       }
 
     }
 

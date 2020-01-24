@@ -15,103 +15,165 @@ namespace Project_Custom_List_Test
             int expected = 4;
             int actual;
 
-            //Act
+           // Act
             mylist.Add(4);
             actual = mylist[0];
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
         public void Add_IndexOne_CheckifAddCountiuestraisecount()
         {
-            //Arrange
+           // Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
-            int zeroValue = 4;
             int expected = 5;
             int actual;
 
-            //Act
+            // Act
+            mylist.Add(4);
             mylist.Add(5);
             actual = mylist[1];
 
-            //Assert
+          //  Assert
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
         public void Add_IndexTwo_CheckifAddfiilstheTwoIndex()
         {
-            //Array
+          //  Array
             NewCustomList<int> mylist = new NewCustomList<int>();
-            int zeroValue = 4;
-            int oneValue = 5;
             int expected = 6;
             int actual;
 
-            //Act
+            // Act
+            mylist.Add(4);
+            mylist.Add(5);
             mylist.Add(6);
             actual = mylist[2];
 
-            //Assert
+           // Assert
             Assert.AreEqual(expected, actual);
         }
 
-        public void Add_IndexThree_CheckIfAddFiilstheThreeIndex()
+        [TestMethod]
+        public void Add_checkingcount()
         {
             //Array
             NewCustomList<int> mylist = new NewCustomList<int>();
-            int zeroValue = 4;
-            int oneVealue = 5;
-            int twoValue = 6;
-            int expected = 7;
+            int expected = 4;
             int actual;
 
             //Act
+            mylist.Add(4);
+            mylist.Add(5);
+            mylist.Add(6);
             mylist.Add(7);
-            actual = mylist[3];
+            actual = mylist.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
-        public void Add_IndexFour_CheckifAddfiilstheFourIndex()
+        [TestMethod]
+        public void Add_IndexFour_CheckAfteradds_Capacityshouldbefive()
         {
             //Array
-            NewCustomList<int> mylist = new NewCustomList<int>();
-            int zeroValue = 4;
-            int oneVealue = 5;
-            int twoValue = 6;
-            int threeValue = 7;
-            int expected = 8;
-            int actual;
+          NewCustomList<int> mylist = new NewCustomList<int>();
+          int expected = 5;
+          int actual;
 
             //Act
-            mylist.Add(8);
-            actual = mylist[4];
+         mylist.Add(4);
+         mylist.Add(5);
+         mylist.Add(6);
+         mylist.Add(7);
+         mylist.Add(8);
+         actual = mylist.Count;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+          Assert.AreEqual(expected, actual);
         }
 
-        public void Add_Capacitydoubling_AddShouldDoubleCapacityAfterArrayIsFilled()
-        {
-            //Array
-            NewCustomList<int> mylist = new NewCustomList<int>();
-            int zerovalue= 4;
-            int oneValue = 5;
-            int twoalue = 6;
-            int threeValue = 7;
-            int fourValue = 8;
-            int expected = 9;
-            int actual;
+        //[TestMethod]
+        //public void Removal_Removecount_RemovecountatIndexZero()
+        //{
+        //    //Arrange
+        //    NewCustomList<int> mylist = new NewCustomList<int>();
+        //    int expected = 5;
+        //    int actual;
 
+        //    //Act
+        //    mylist.Add(4);
+        //    mylist.Add(5);
+        //    mylist.Add(6);
+        //    mylist.Remove(4);
+        //    actual = mylist[0];
 
-            //Act
-            mylist.Add(9);
-            actual = mylist[0];
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-            //Assert
-            Assert.AreEqual(expected, actual); 
-        } 
+        //[TestMethod]
+        //public void Removal_Removecount_RemovecountatIndexOne()
+        //{
+        //    //Arrange
+        //    NewCustomList<int> mylist = new NewCustomList<int>();
+        //    int expected = 6;
+        //    int actual;
+
+        //    //Act
+        //    mylist.Add(4);
+        //    mylist.Add(5);
+        //    mylist.Add(6);
+        //    mylist.Remove(5);
+        //    actual = mylist[1];
+
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+        //[TestMethod]
+        //public void Removal_CheckCountAfterRemove()
+        //{
+        //    //Arrange
+        //    NewCustomList<int> mylist = new NewCustomList<int>();
+        //    int expected = 6;
+        //    int actual;
+
+        //    //Act
+        //    mylist.Add(4);
+        //    mylist.Add(5);
+        //    mylist.Add(6);
+        //    mylist.Remove(5);
+        //    actual = mylist.Count;
+
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+        //[TestMethod]
+        //public void Removal_two thing at once()
+        //{
+        //    //Arrange
+        //    NewCustomList<int> mylist = new NewCustomList<int>();
+        //    int expected = 4;
+        //    int actual;
+
+        //    //Act
+        //    mylist.Add(6);
+        //    mylist.Add(5);
+        //    mylist,Add(4);
+        //    mylist.Remove(6);
+        //    mylist.Remove(5);
+        //    actual = mylist.[0];
+
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+
 
     }
 }

@@ -10,6 +10,8 @@ namespace Project_Custom_List_Class
     {
         static void Main(string[] args)
         {
+            NewCustomList<int> List = new NewCustomList<int>();
+            List.Add(8);
         }
     }
 }
