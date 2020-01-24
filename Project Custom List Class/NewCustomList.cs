@@ -26,8 +26,15 @@ namespace Project_Custom_List_Class
         {
             if (count == capacity)
             {
+                T[] tempArray = items;
+                capacity *= 2;
+                items = new T[capacity];
+                for(int i = 0; i < count; i++)
+                {
+                    items[i] = tempArray[i];
+                }
                 
-                items = new T[capacity * 2];
+
                   
             }
 
@@ -55,11 +62,10 @@ namespace Project_Custom_List_Class
             }
         }
 
-       public void Remove(T item)
-       {
-
-            
-       }
+       //public void Remove(T item)
+       //{
+           
+       //}
 
     }
 
