@@ -271,7 +271,64 @@ namespace Project_Custom_List_Test
             Assert.AreEqual(expected, actual);
         }
 
-       
+
+        //break
+        [TestMethod]
+        public void plusoperator()
+        {
+            //Arrange
+            NewCustomList<int> mylist = new NewCustomList<int>();
+            int expected = 4757;
+            int actual;
+
+            //Act
+            mylist.Add(47);
+            mylist.Add(57);
+            actual = mylist.plusOperator(47 + 57);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void plusoperator_()
+        {
+            //Arrange
+            NewCustomList<string> mylist = new NewCustomList<string>();
+            string expected = "BrokenArrow";
+            string acutal;
+
+            //Act
+            mylist.Add("Broken ");
+             mylist.Add( "Arrow");
+            acutal = mylist.plusOperator("Broken" + "Arrow"); 
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void plusoperator_____()
+        {
+            //Arrange
+            NewCustomList<double> mylist = new NewCustomList<double>();
+            double expected = 1.307;
+            double acutal;
+
+            //Act
+            mylist.Add(1.3);
+            mylist.Add(07);
+            acutal = mylist.plusOperator(1.3 + 07);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        
+
+
+
+
 
 
     }

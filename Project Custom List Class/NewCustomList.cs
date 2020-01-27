@@ -96,12 +96,14 @@ namespace Project_Custom_List_Class
             for(int i = 0; i < count; i++)
             {
                 convertstring.Append(items[i].ToString());
-                
-
-
-               
+                 
             }
             return convertstring.ToString();
+        }
+
+        public void PlusOperator()
+        {
+
         }
 
 
