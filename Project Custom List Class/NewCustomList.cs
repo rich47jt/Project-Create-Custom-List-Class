@@ -7,22 +7,26 @@ using System.Threading.Tasks;
 
 namespace Project_Custom_List_Class
 {
-    public class NewCustomList<T>  /*IEnumerable*/
+    public class NewCustomList<T>  
     {
-        
+     //Memeber Variable   
         public T[] items;
         public int capacity;
         int count;
         
-
+        
+      
+        //Constructor
         public NewCustomList()
         {
             count = 0;
             capacity = 4;
             items = new T[capacity];
-
+           
+           
         }
 
+        //Methods
         public void Add(T item) 
         {
             if (count == capacity)
@@ -34,8 +38,6 @@ namespace Project_Custom_List_Class
                 {
                     items[i] = tempArray[i];
                 }
-                
-
                   
             }
 
@@ -84,18 +86,25 @@ namespace Project_Custom_List_Class
                 
            }
 
-            
-      
         }
 
-        //public IEnumerator GetEnumerator()
-        //{
+        public override string ToString()
+        {
+            StringBuilder convertstring;
+            convertstring = new StringBuilder();
 
-        //    for(int i = 0; i < count;i++)
-        //    {
-        //        return items[i];
-        //    }
-        //}
+            for(int i = 0; i < count; i++)
+            {
+                convertstring.Append(items[i].ToString());
+                
+
+
+               
+            }
+            return convertstring.ToString();
+        }
+
+
     }
 
 

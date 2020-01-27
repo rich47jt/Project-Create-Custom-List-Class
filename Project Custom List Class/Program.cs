@@ -11,11 +11,7 @@ namespace Project_Custom_List_Class
         static void Main(string[] args)
         {
             NewCustomList<int> List = new NewCustomList<int>();
-            List.Add(6);
-            List.Add(7);
-            List.Add(8);
-            List.Remove(6);
-            Console.Read();
+            
 
 
 

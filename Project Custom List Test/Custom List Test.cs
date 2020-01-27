@@ -213,6 +213,65 @@ namespace Project_Custom_List_Test
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        //break
+        [TestMethod]
+
+        public void ToString_CanCovert_InttoString()
+        {
+            //Arrange 
+            NewCustomList<int> mylist = new NewCustomList<int>();
+            string expected = "327645";
+            string actual;
+           
+            //Act
+            mylist.Add(32);
+            mylist.Add(76);
+            mylist.Add(45);
+            actual = mylist.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToString_CanCombine_MethodCanCombineStrings()
+        {
+            //Arrange
+            NewCustomList<string> mylist = new NewCustomList<string>();
+            string expected = "DavidMichelBrettPaul";
+            string actual;
+
+            //Act
+            mylist.Add("David");
+            mylist.Add("Michel");
+            mylist.Add("Brett");
+            mylist.Add("Paul");
+            actual = mylist.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToString_CanCovert_TakeDoublesandTurnIntoStrings()
+        {
+            //Arrange
+            NewCustomList<double> mylist = new NewCustomList<double>();
+            string expected = "1.51.41.61.7";
+            string actual;
+
+            //Act
+            mylist.Add(1.5);
+            mylist.Add(1.4);
+            mylist.Add(1.6);
+            mylist.Add(1.7);
+            actual = mylist.ToString();
+
+            //Asssert
+            Assert.AreEqual(expected, actual);
+        }
+
+       
 
 
     }
