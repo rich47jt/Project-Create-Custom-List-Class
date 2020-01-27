@@ -14,9 +14,11 @@ namespace Project_Custom_List_Class
             List.Add(6);
             List.Add(7);
             List.Add(8);
-            List.Add(9);
-            List.Add(10);
-            Console.ReadLine();
+            List.Remove(6);
+            Console.Read();
+
+
+
         }
     }
 }
