@@ -7,23 +7,20 @@ using System.Threading.Tasks;
 
 namespace Project_Custom_List_Class
 {
-    public class NewCustomList<T>  
+    public class NewCustomList<T> :  IEnumerable
     {
      //Memeber Variable   
         public T[] items;
         public int capacity;
         int count;
         
-        
-      
         //Constructor
         public NewCustomList()
         {
             count = 0;
             capacity = 4;
             items = new T[capacity];
-           
-           
+            
         }
 
         //Methods
@@ -65,6 +62,7 @@ namespace Project_Custom_List_Class
             }
         }
 
+        
         public void Remove(T itemToRemove)
         {
            bool foundvalue = false;
@@ -101,12 +99,39 @@ namespace Project_Custom_List_Class
             return convertstring.ToString();
         }
 
-        public void PlusOperator()
+        
+        
+
+        public static NewCustomList<T> operator+ (NewCustomList<T> alpha, NewCustomList<T> bravo)
         {
 
+            NewCustomList<T> List = new NewCustomList<T>();
+            for (int i = 0; i < alpha.count; i++)
+            {
+                List.Add(alpha[i]);
+                
+            }
+
+            for(int i = 0; i < bravo.count; i++)
+            {
+                List.Add(bravo[i]);
+            }
+
+            return List;
         }
+        
+      
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return items[i];
 
 
+            }
+
+            
+        }
     }
 
 

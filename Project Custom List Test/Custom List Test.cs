@@ -277,54 +277,53 @@ namespace Project_Custom_List_Test
         public void plusoperator()
         {
             //Arrange
-            NewCustomList<int> mylist = new NewCustomList<int>();
-            int expected = 4757;
-            int actual;
+            NewCustomList<int> mylist = new NewCustomList<int>(){123};
+            NewCustomList<int> mylist2 = new NewCustomList<int>(){456};
+            NewCustomList<int> expected = new NewCustomList<int>(){123456};
+            NewCustomList<int> actual;
 
             //Act
-            mylist.Add(47);
-            mylist.Add(57);
-            actual = mylist.plusOperator(47 + 57);
+            actual = mylist + mylist2;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+           
         }
 
         [TestMethod]
         public void plusoperator_()
         {
             //Arrange
-            NewCustomList<string> mylist = new NewCustomList<string>();
-            string expected = "BrokenArrow";
-            string acutal;
+            NewCustomList<string> mylist = new NewCustomList<string>() {"Bad,Bears,Live"};
+            NewCustomList<string> mylist2 = new NewCustomList<string>() {",In,Black,Woods"};
+            NewCustomList<string> expected = new NewCustomList<string>() {"Bad,Bears,Live,In,Black,Woods"};
+            NewCustomList<string> actual;
 
             //Act
-            mylist.Add("Broken ");
-             mylist.Add( "Arrow");
-            acutal = mylist.plusOperator("Broken" + "Arrow"); 
+            actual = mylist + mylist2;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.ToString(), actual.ToString());
         }
 
         [TestMethod]
         public void plusoperator_____()
         {
             //Arrange
-            NewCustomList<double> mylist = new NewCustomList<double>();
-            double expected = 1.307;
-            double acutal;
+            NewCustomList<double> mylist = new NewCustomList<double>() {1.2,1.3,1.4,1.5};
+            NewCustomList<double> mylist2 = new NewCustomList<double>() {1.6,1.7,1.8,1.9};
+            NewCustomList<double> expected = new NewCustomList<double>() { 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 };
+            NewCustomList<double> actual;
 
             //Act
-            mylist.Add(1.3);
-            mylist.Add(07);
-            acutal = mylist.plusOperator(1.3 + 07);
+
+            actual = mylist + mylist2;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.ToString(), actual.ToString());
         }
 
-        
+
 
 
 
