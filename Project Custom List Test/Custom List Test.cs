@@ -324,6 +324,56 @@ namespace Project_Custom_List_Test
         }
 
 
+        //break
+        [TestMethod]
+        public void Minusoperator_____()
+        {
+            //Arrange
+            NewCustomList<double> mylist = new NewCustomList<double>() {1.1,1.2,1.3,1.4};
+            NewCustomList<double> mylist2 = new NewCustomList<double>() {1.1,1.5,1.6,1.7};
+            NewCustomList<double> expected = new NewCustomList<double>() {1.2,1.3,1.4};
+            NewCustomList<double> actual;
+
+            //Act
+
+            actual = mylist - mylist2;
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+
+        public void minusoperator_()
+        {
+            //Arrange
+            NewCustomList<string> mylist = new NewCustomList<string>() {"Sunny,Rain,Sleet,Snow"};
+            NewCustomList<string> mylist2 = new NewCustomList<string>() {"Sunny,Rain,Stormy,Hail"};
+            NewCustomList<string> expected = new NewCustomList<string>() {"Sleet,Snow"};
+            NewCustomList<string> actual;
+
+            //Act
+            actual = mylist - mylist2;
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+
+        [TestMethod]
+        public void minusoperator()
+        {
+            //Arrange
+            NewCustomList<int> mylist = new NewCustomList<int>() { 123456 };
+            NewCustomList<int> mylist2 = new NewCustomList<int>() { 456 };
+            NewCustomList<int> expected = new NewCustomList<int>() { 123 };
+            NewCustomList<int> actual;
+
+            //Act
+            actual = mylist - mylist2;
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+
+        }
+
 
 
 
