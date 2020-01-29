@@ -70,18 +70,14 @@ namespace Project_Custom_List_Class
            {
                 if (items[i].Equals(itemToRemove) &&foundvalue == false)
                 {
-
                     foundvalue = true;
                     count--;
                 } 
 
-               
                 if (foundvalue == true)
                 {
                     items[i] = items[i+1];
                 }
-
-                
            }
 
         }
@@ -93,14 +89,10 @@ namespace Project_Custom_List_Class
 
             for(int i = 0; i < count; i++)
             {
-                convertstring.Append(items[i].ToString());
-                 
+                convertstring.Append(items[i].ToString());        
             }
             return convertstring.ToString();
         }
-
-        
-        
 
         public static NewCustomList<T> operator+ (NewCustomList<T> alpha, NewCustomList<T> bravo)
         {
@@ -123,33 +115,26 @@ namespace Project_Custom_List_Class
         public static NewCustomList<T> operator- (NewCustomList<T> alpha, NewCustomList<T> bravo)
         {
             NewCustomList<T> List = new NewCustomList<T>();
-            //mkae lokgic to move values from alpha into List
+
             for (int i = 0; i < alpha.count; i++)
             {
                 List.Add(alpha[i]);
             }
-            //if item in alpha list equals bravo then add to list
-            //else do nothing 
+
            for (int i = 0; i < bravo.count; i++)
            {
                
-                    List.Remove(bravo[i]);
+              List.Remove(bravo[i]);
                   
            }
-
-     
             return List;
         }
 
-        public static NewCustomList<T> zip(NewCustomList<T> alpha, NewCustomList<T> bravo)
+        public static NewCustomList<T> Zip(NewCustomList<T> alpha, NewCustomList<T> bravo)
         {
             NewCustomList<T> List = new NewCustomList<T>();
-
             if (alpha.count >= bravo.count)
             {
-
-
-
                 for (int i = 0; i < alpha.count; i++)
                 {
                     List.Add(alpha[i]);
@@ -158,15 +143,12 @@ namespace Project_Custom_List_Class
                         List.Add(bravo[i]);
                     }
 
-
-
                 }
             }
             else
             {
                 for (int i = 0; i < bravo.count; i++)
                 {
-          
                     if (alpha.count > i)
                     {
                         List.Add(alpha[i]);
@@ -176,15 +158,10 @@ namespace Project_Custom_List_Class
 
                 }
 
-
             }
-
-
             return List;
         }
         
-        
-      
         IEnumerator IEnumerable.GetEnumerator()
         {
             for (int i = 0; i < count; i++)
@@ -193,7 +170,6 @@ namespace Project_Custom_List_Class
 
 
             }
-
             
         }
     }

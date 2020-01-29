@@ -8,7 +8,7 @@ namespace Project_Custom_List_Test
     public class CustomListTest
     {
         [TestMethod]
-        public void Add_IndexZero_CheckifAddfillsIndexZero()
+        public void Add_IndexZero_CheckIfAddFillsIndexZero()
         {
             //Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -24,7 +24,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void Add_IndexOne_CheckifAddCountiuestraisecount()
+        public void Add_IndexOne_CheckIfAddFillsIndexOne()
         {
             // Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -41,7 +41,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void Add_IndexTwo_CheckifAddfiilstheTwoIndex()
+        public void Add_IndexTwo_CheckIfAddFiilsIndexTwo()
         {
             //  Array
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -59,7 +59,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void Add_CheckingCount()
+        public void Add_CheckingCount_CheckIfAddIncreasesCount()
         {
             //Array
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -78,7 +78,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void Add_CheckCountAfter()
+        public void Add_CheckCount_CheckCountAfterAddToIndexFive()
         {
             //Array
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -97,7 +97,7 @@ namespace Project_Custom_List_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void AddValuesToIncreaseCapacity_EnsureOriginalValuesPresent()
+        public void Add_CheckCapacity_CheckToSeeIfCapacityIsIncreased()
         {
             //Array
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -118,7 +118,7 @@ namespace Project_Custom_List_Test
 
         // break
         [TestMethod]
-        public void Removal_RemoveAtIndexZero()
+        public void Remove_CheckRemove_CheeckIfRemoveAtIndexZero()
         {
             // Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -137,7 +137,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void Removal_RemovAtIndexOne()
+        public void Remove_CheckRemov_CheckRemoveAtIndexOne()
         {
             //Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -175,7 +175,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void Removal_RemoveAtIndexZeroAndOne()
+        public void Remove_RemoveAtIndexZeroAndOne()
         {
             //Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -195,7 +195,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void Removal_CheckCount()
+        public void Remove_CheckCount_AfterRemoveAtIndexZeroandOne()
         {
             //Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -216,7 +216,7 @@ namespace Project_Custom_List_Test
         //break
         [TestMethod]
 
-        public void ToString_CanCovert_InttoString()
+        public void ToString_CanIntCovert_InttoString()
         {
             //Arrange 
             NewCustomList<int> mylist = new NewCustomList<int>();
@@ -234,17 +234,17 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void ToString_CanCombine_MethodCanCombineStrings()
+        public void ToString_CanCombineString()
         {
             //Arrange
             NewCustomList<string> mylist = new NewCustomList<string>();
-            string expected = "DavidMichelBrettPaul";
+            string expected = "David Michel Brett Paul";
             string actual;
 
             //Act
-            mylist.Add("David");
-            mylist.Add("Michel");
-            mylist.Add("Brett");
+            mylist.Add("David ");
+            mylist.Add("Michel ");
+            mylist.Add("Brett ");
             mylist.Add("Paul");
             actual = mylist.ToString();
 
@@ -253,7 +253,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void ToString_CanCovert_TakeDoublesandTurnIntoStrings()
+        public void ToString_CanCovertDouble()
         {
             //Arrange
             NewCustomList<double> mylist = new NewCustomList<double>();
@@ -261,10 +261,10 @@ namespace Project_Custom_List_Test
             string actual;
 
             //Act
-            mylist.Add(1.5);
-            mylist.Add(1.4);
-            mylist.Add(1.6);
-            mylist.Add(1.7);
+            mylist.Add( 1.5 );
+            mylist.Add( 1.4 );
+            mylist.Add( 1.6 );
+            mylist.Add( 1.7);
             actual = mylist.ToString();
 
             //Asssert
@@ -274,7 +274,7 @@ namespace Project_Custom_List_Test
 
         //break
         [TestMethod]
-        public void plusoperator()
+        public void PlusOperator_CanAddListofInt()
         {
             //Arrange
             NewCustomList<int> mylist = new NewCustomList<int>() { 123 };
@@ -291,7 +291,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void plusoperator_()
+        public void PlusOperator_CanAddListOfString()
         {
             //Arrange
             NewCustomList<string> mylist = new NewCustomList<string>() { "Bad,Bears,Live" };
@@ -307,7 +307,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void plusoperator_____()
+        public void PlusOperator_CanAddListofDoublbe()
         {
             //Arrange
             NewCustomList<double> mylist = new NewCustomList<double>() { 1.2, 1.3, 1.4, 1.5 };
@@ -326,7 +326,7 @@ namespace Project_Custom_List_Test
 
         //break
         [TestMethod]
-        public void Minusoperator_____()
+        public void Minusoperator_CanSubtractListDouble()
         {
             //Arrange
             NewCustomList<double> mylist = new NewCustomList<double>() {1.1,1.2,1.3,1.4};
@@ -343,7 +343,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void minusoperator_()
+        public void Minusoperator_CanSubtractListString()
         {
             //Arrange
             NewCustomList<string> mylist = new NewCustomList<string>() {"Sunny","Rain","Sleet","Snow"};
@@ -359,7 +359,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void minusoperator()
+        public void MinusOperator_CanSubtractListofInt()
         {
             //Arrange
             NewCustomList<int> mylist = new NewCustomList<int>() {1,2,3,4,5,6};
@@ -377,7 +377,7 @@ namespace Project_Custom_List_Test
 
         //break
         [TestMethod]
-        public void Zipp()
+        public void Zip_CanZipListInt()
         {
             //Arrange
             NewCustomList<int> mylist = new NewCustomList<int>() {1,2,3};
@@ -386,7 +386,7 @@ namespace Project_Custom_List_Test
             NewCustomList<int> actual;
 
             //Act
-            actual = NewCustomList<int>.zip(mylist,mylist2);
+            actual = NewCustomList<int>.Zip(mylist,mylist2);
 
             //Assert
             Assert.AreEqual(expected.ToString(), actual.ToString());
@@ -394,7 +394,7 @@ namespace Project_Custom_List_Test
         }
 
         [TestMethod]
-        public void zip_()
+        public void Zip_CanZipListString()
         {
             //Arrange
             NewCustomList<string> mylist = new NewCustomList<string>() { "Sunny", "Rain", "Sleet" };
@@ -403,14 +403,14 @@ namespace Project_Custom_List_Test
             NewCustomList<string> actual;
 
             //Act
-            actual = NewCustomList<string>.zip(mylist, mylist2);
+            actual = NewCustomList<string>.Zip(mylist, mylist2);
 
             //Assert
             Assert.AreEqual(expected.ToString(), actual.ToString());
         }
 
         [TestMethod]
-        public void zip_____()
+        public void Zip_CanZipListDpouble()
         {
             //Arrange
             NewCustomList<double> mylist = new NewCustomList<double>() { 1.1, 1.2, 1.3, 1.4 };
@@ -420,7 +420,7 @@ namespace Project_Custom_List_Test
 
             //Act
 
-            actual = NewCustomList<double>.zip(mylist, mylist2);
+            actual = NewCustomList<double>.Zip(mylist, mylist2);
 
             //Assert
             Assert.AreEqual(expected.ToString(), actual.ToString());
