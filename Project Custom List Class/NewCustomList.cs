@@ -68,7 +68,7 @@ namespace Project_Custom_List_Class
            bool foundvalue = false;
            for (int i = 0; i < count;i++)
            {
-                if (items[i].Equals(items[i]) &&foundvalue == false)
+                if (items[i].Equals(itemToRemove) &&foundvalue == false)
                 {
 
                     foundvalue = true;
@@ -119,6 +119,70 @@ namespace Project_Custom_List_Class
 
             return List;
         }
+
+        public static NewCustomList<T> operator- (NewCustomList<T> alpha, NewCustomList<T> bravo)
+        {
+            NewCustomList<T> List = new NewCustomList<T>();
+            //mkae lokgic to move values from alpha into List
+            for (int i = 0; i < alpha.count; i++)
+            {
+                List.Add(alpha[i]);
+            }
+            //if item in alpha list equals bravo then add to list
+            //else do nothing 
+           for (int i = 0; i < bravo.count; i++)
+           {
+               
+                    List.Remove(bravo[i]);
+                  
+           }
+
+     
+            return List;
+        }
+
+        public static NewCustomList<T> zip(NewCustomList<T> alpha, NewCustomList<T> bravo)
+        {
+            NewCustomList<T> List = new NewCustomList<T>();
+
+            if (alpha.count >= bravo.count)
+            {
+
+
+
+                for (int i = 0; i < alpha.count; i++)
+                {
+                    List.Add(alpha[i]);
+                    if (bravo.count > i)
+                    {
+                        List.Add(bravo[i]);
+                    }
+
+
+
+                }
+            }
+            else
+            {
+                for (int i = 0; i < bravo.count; i++)
+                {
+          
+                    if (alpha.count > i)
+                    {
+                        List.Add(alpha[i]);
+                    }
+
+                    List.Add(bravo[i]);
+
+                }
+
+
+            }
+
+
+            return List;
+        }
+        
         
       
         IEnumerator IEnumerable.GetEnumerator()

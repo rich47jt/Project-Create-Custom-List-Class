@@ -15,7 +15,7 @@ namespace Project_Custom_List_Test
             int expected = 4;
             int actual;
 
-           // Act
+            // Act
             mylist.Add(4);
             actual = mylist[0];
 
@@ -26,7 +26,7 @@ namespace Project_Custom_List_Test
         [TestMethod]
         public void Add_IndexOne_CheckifAddCountiuestraisecount()
         {
-           // Arrange
+            // Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
             int expected = 5;
             int actual;
@@ -36,14 +36,14 @@ namespace Project_Custom_List_Test
             mylist.Add(5);
             actual = mylist[1];
 
-          //  Assert
+            //  Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void Add_IndexTwo_CheckifAddfiilstheTwoIndex()
         {
-          //  Array
+            //  Array
             NewCustomList<int> mylist = new NewCustomList<int>();
             int expected = 6;
             int actual;
@@ -54,7 +54,7 @@ namespace Project_Custom_List_Test
             mylist.Add(6);
             actual = mylist[2];
 
-           // Assert
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -120,12 +120,12 @@ namespace Project_Custom_List_Test
         [TestMethod]
         public void Removal_RemoveAtIndexZero()
         {
-           // Arrange
+            // Arrange
             NewCustomList<int> mylist = new NewCustomList<int>();
             int expected = 5;
             int actual;
 
-           // Act
+            // Act
             mylist.Add(4);
             mylist.Add(5);
             mylist.Add(6);
@@ -222,7 +222,7 @@ namespace Project_Custom_List_Test
             NewCustomList<int> mylist = new NewCustomList<int>();
             string expected = "327645";
             string actual;
-           
+
             //Act
             mylist.Add(32);
             mylist.Add(76);
@@ -277,9 +277,9 @@ namespace Project_Custom_List_Test
         public void plusoperator()
         {
             //Arrange
-            NewCustomList<int> mylist = new NewCustomList<int>(){123};
-            NewCustomList<int> mylist2 = new NewCustomList<int>(){456};
-            NewCustomList<int> expected = new NewCustomList<int>(){123456};
+            NewCustomList<int> mylist = new NewCustomList<int>() { 123 };
+            NewCustomList<int> mylist2 = new NewCustomList<int>() { 456 };
+            NewCustomList<int> expected = new NewCustomList<int>() { 123456 };
             NewCustomList<int> actual;
 
             //Act
@@ -287,16 +287,16 @@ namespace Project_Custom_List_Test
 
             //Assert
             Assert.AreEqual(expected.ToString(), actual.ToString());
-           
+
         }
 
         [TestMethod]
         public void plusoperator_()
         {
             //Arrange
-            NewCustomList<string> mylist = new NewCustomList<string>() {"Bad,Bears,Live"};
-            NewCustomList<string> mylist2 = new NewCustomList<string>() {",In,Black,Woods"};
-            NewCustomList<string> expected = new NewCustomList<string>() {"Bad,Bears,Live,In,Black,Woods"};
+            NewCustomList<string> mylist = new NewCustomList<string>() { "Bad,Bears,Live" };
+            NewCustomList<string> mylist2 = new NewCustomList<string>() { ",In,Black,Woods" };
+            NewCustomList<string> expected = new NewCustomList<string>() { "Bad,Bears,Live,In,Black,Woods" };
             NewCustomList<string> actual;
 
             //Act
@@ -310,8 +310,8 @@ namespace Project_Custom_List_Test
         public void plusoperator_____()
         {
             //Arrange
-            NewCustomList<double> mylist = new NewCustomList<double>() {1.2,1.3,1.4,1.5};
-            NewCustomList<double> mylist2 = new NewCustomList<double>() {1.6,1.7,1.8,1.9};
+            NewCustomList<double> mylist = new NewCustomList<double>() { 1.2, 1.3, 1.4, 1.5 };
+            NewCustomList<double> mylist2 = new NewCustomList<double>() { 1.6, 1.7, 1.8, 1.9 };
             NewCustomList<double> expected = new NewCustomList<double>() { 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 };
             NewCustomList<double> actual;
 
@@ -342,12 +342,13 @@ namespace Project_Custom_List_Test
             Assert.AreEqual(expected.ToString(), actual.ToString());
         }
 
+        [TestMethod]
         public void minusoperator_()
         {
             //Arrange
-            NewCustomList<string> mylist = new NewCustomList<string>() {"Sunny,Rain,Sleet,Snow"};
-            NewCustomList<string> mylist2 = new NewCustomList<string>() {"Sunny,Rain,Stormy,Hail"};
-            NewCustomList<string> expected = new NewCustomList<string>() {"Sleet,Snow"};
+            NewCustomList<string> mylist = new NewCustomList<string>() {"Sunny","Rain","Sleet","Snow"};
+            NewCustomList<string> mylist2 = new NewCustomList<string>() {"Sunny","Rain","Stormy","Hail"};
+            NewCustomList<string> expected = new NewCustomList<string>() {"Sleet","Snow"};
             NewCustomList<string> actual;
 
             //Act
@@ -361,9 +362,9 @@ namespace Project_Custom_List_Test
         public void minusoperator()
         {
             //Arrange
-            NewCustomList<int> mylist = new NewCustomList<int>() { 123456 };
-            NewCustomList<int> mylist2 = new NewCustomList<int>() { 456 };
-            NewCustomList<int> expected = new NewCustomList<int>() { 123 };
+            NewCustomList<int> mylist = new NewCustomList<int>() {1,2,3,4,5,6};
+            NewCustomList<int> mylist2 = new NewCustomList<int>() {4,5,6};
+            NewCustomList<int> expected = new NewCustomList<int>() {1,2,3};
             NewCustomList<int> actual;
 
             //Act
@@ -372,6 +373,57 @@ namespace Project_Custom_List_Test
             //Assert
             Assert.AreEqual(expected.ToString(), actual.ToString());
 
+        }
+
+        //break
+        [TestMethod]
+        public void Zipp()
+        {
+            //Arrange
+            NewCustomList<int> mylist = new NewCustomList<int>() {1,2,3};
+            NewCustomList<int> mylist2 = new NewCustomList<int>() {4,5,6};
+            NewCustomList<int> expected = new NewCustomList<int>() {1,4,2,5,3,6};
+            NewCustomList<int> actual;
+
+            //Act
+            actual = NewCustomList<int>.zip(mylist,mylist2);
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+            
+        }
+
+        [TestMethod]
+        public void zip_()
+        {
+            //Arrange
+            NewCustomList<string> mylist = new NewCustomList<string>() { "Sunny", "Rain", "Sleet" };
+            NewCustomList<string> mylist2 = new NewCustomList<string>() {"Windy", "Wet", "Stormy"};
+            NewCustomList<string> expected = new NewCustomList<string>() { "Sunny","Windy", "Rain", "Wet", "Sleet", "Stormy"};
+            NewCustomList<string> actual;
+
+            //Act
+            actual = NewCustomList<string>.zip(mylist, mylist2);
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+
+        [TestMethod]
+        public void zip_____()
+        {
+            //Arrange
+            NewCustomList<double> mylist = new NewCustomList<double>() { 1.1, 1.2, 1.3, 1.4 };
+            NewCustomList<double> mylist2 = new NewCustomList<double>() { 1.5, 1.6};
+            NewCustomList<double> expected = new NewCustomList<double>() { 1.1, 1.5, 1.2, 1.6, 1.3, 1.4};
+            NewCustomList<double> actual;
+
+            //Act
+
+            actual = NewCustomList<double>.zip(mylist, mylist2);
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
         }
 
 
